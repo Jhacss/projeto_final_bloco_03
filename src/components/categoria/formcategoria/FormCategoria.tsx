@@ -1,4 +1,4 @@
-﻿import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
@@ -18,19 +18,14 @@ function FormCategoria() {
       await buscar(`/categorias/${id}`, setCategoria)
     } catch (error: any) {
       alert("Categoria não encontrada!")
-      retornar();
+    
     }
   }
 
   useEffect(() => {
     if (id !== undefined) {
       buscarCategoriaPorId(id)
-    }else{
-			setCategoria({
-				id: 0,
-				tipo: "",
-			})	
-		}
+    }
   }, [id])
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
@@ -88,10 +83,10 @@ function FormCategoria() {
           <input
             type="text"
             placeholder="Categoria"
-            name="tipo"
+            name="nome"
             className="p-2 border-2 rounded border-slate-700 bg-white"
             required
-            value={categoria.tipo}
+            value={categoria.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
