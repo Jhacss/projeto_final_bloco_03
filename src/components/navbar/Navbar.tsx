@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Navbar() {
     return (
         <>
-            <div className='w-full flex justify-center py-4 bg-emerald-900 text-white'>
+            <div className='w-full flex justify-center py-4 bg-red-600 text-white'>
                 <div className="container flex justify-between items-center text-lg">
                     
                     {/* Logo */}
